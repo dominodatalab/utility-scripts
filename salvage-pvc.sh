@@ -65,7 +65,8 @@ Use:
   kubectl exec -it $pod_name -n $pvc_namespace bash
 Recovered data will be in /salvage
 When you are done, please remove the pod and pvc:
-  kubectl delete -n $pvc_namespace pod/$pod_name pvc/$pvc_name
+  kubectl delete -n $pvc_namespace pod/$pod_name
+  # kubectl delete -n $pvc_namespace pvc/$pvc_name
 Additionally, please clean up the PV when data has been recovered:
   kubectl delete pv $pv_name
 If you wish to keep this PV to rebind later with this script, clear its claim ref:
